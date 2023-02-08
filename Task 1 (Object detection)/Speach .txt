@@ -1,0 +1,76 @@
+Hello everyone, my name is Mostafa Usama and i'm currently working
+as an IoT and computer vision intern at the sparks foundation
+this is the first task : object detection 
+where we need to implement an object detector which identfies the classes
+of the objects in an image
+
+
+
+
+
+so, there are many methods and techniques that are used to do object detection 
+like Fast R-cnn which is accurate but slow
+YOLO which is the opposite, its fast but not so accurate 
+and then there is SSD or single shot detector which is a balance
+between the two
+we will use the SSD method in our code
+
+
+
+
+
+first of all we need to import open cv library to use a pretrained network 
+and also we will use some of its built it functionalities
+we will also import numpy because it makes it easier to work with arrays 
+and also we will use some of its built in functionalities
+
+now these two variables, model and proto_txt are nessecary to load our model
+so we will just store the path to these files
+which are located in the same project folder
+now we will set our min confidence to be 40% to determine how confident
+the model should be to say that it detected an object
+
+then we will create a list that identifies the object classes to be detected 
+
+we will use the random seed just to keep getting the same result everytime
+we use the Random function which we will use in the next line
+now colors here is used to set a different rectangle color for each object class
+we have 
+
+we give it a value between 0 and 255 and this numpy array will be the 
+same length as the classes list with 3 dimensions which are red green and blue 
+
+now we will load our pretrained model and give it the two variables
+(model and proto txt) and now its ready to detect objects
+
+here we read an image from our folder using the imread function
+we store its height and width using the shape function
+we craete a blob or (Binary large object) and using the function blobFromImage
+we give it a 320 by 320 pixel blob
+with scale factor 0.007843 , an image size also of size 320 by 320 and the mean.
+you can play with these numbers and see yourself which gives you the best results 
+
+now we will set the input of our model to be our image
+and feed it to the model using the forward method
+
+so now the variable result is storing all of the objects that we detected
+we will loop over all of them and check each one's confidence 
+and if its higher or equal to our min confidence
+
+we will first store the class of the detected object 
+then we return the X coordiantes of the top left point,the Y coordiantes of the
+top left point, the X coordiantes of the bottom right point and the Y coordiantes
+of the bottom right point of the detected objects and multiply them with 
+the actual width and height (because these values were normalized after detection)
+
+we store the individuals coordinates points 
+
+we then craete a label text which will display the class of the object and 
+the confidence precntage
+
+we now draw the rectangle around our object with the color associated with this 
+class and finally we put the label text above the rectangle
+
+lets show the image and run now 
+
+  
