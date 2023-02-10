@@ -18,7 +18,7 @@ colors = np.random.uniform(0,255,size=(len(classes),3)) #random color for every 
 net = cv.dnn.readNetFromCaffe(proto_txt,model) # load model 
 
 
-img = cv.imread("img2.jpg") # read image for detection
+img = cv.imread("img3.jpg") # read image for detection
 height, width,_ = img.shape # get height and weight of image
 
 blob = cv.dnn.blobFromImage(cv.resize(img,(320,320)),0.007843,(320,320),127.5)

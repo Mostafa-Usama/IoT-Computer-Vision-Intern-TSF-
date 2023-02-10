@@ -1,6 +1,6 @@
 Hello everyone, my name is Mostafa Usama and i'm currently working
 as an IoT and computer vision intern at the sparks foundation
-this is the first task : object detection 
+this is the first task: object detection 
 where we need to implement an object detector which identfies the classes
 of the objects in an image
 
@@ -11,8 +11,7 @@ of the objects in an image
 so, there are many methods and techniques that are used to do object detection 
 like Fast R-cnn which is accurate but slow
 YOLO which is the opposite, its fast but not so accurate 
-and then there is SSD or single shot detector which is a balance
-between the two
+and then there is SSD or single shot detector which is a balance between the two
 we will use the SSD method in our code
 
 
